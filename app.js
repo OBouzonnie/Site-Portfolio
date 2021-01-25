@@ -7,9 +7,8 @@
 // ---------------------------------------------------------------------------------------
 
 const allRea = document.querySelectorAll('.gallerie div')
-const visuelRea = document.querySelectorAll('.visuel')
 const jeuRea = document.querySelectorAll('.jeu')
-const basicRea = document.querySelectorAll('.basique')
+const appsRea = document.querySelectorAll('.apps')
 const apiRea = document.querySelectorAll('.api')
 const btnFiltre = document.querySelectorAll('.btn-filtre div')
 
@@ -57,15 +56,6 @@ function showGamesOnly(){
     })
 }
 
-function showVisualOnly(){
-    allRea.forEach( elem => {
-        elem.classList.add('hidden')
-    })
-    visuelRea.forEach( elem => {
-        elem.classList.remove('hidden')
-    })
-}
-
 function showApiOnly(){
     allRea.forEach( elem => {
         elem.classList.add('hidden')
@@ -75,11 +65,11 @@ function showApiOnly(){
     }) 
 }
 
-function showBasicOnly(){
+function showAppsOnly(){
     allRea.forEach( elem => {
         elem.classList.add('hidden')
     })
-    basicRea.forEach( elem => {
+    appsRea.forEach( elem => {
         elem.classList.remove('hidden')
     })
 }
@@ -93,6 +83,5 @@ function showBasicOnly(){
 
 btnFiltre[0].addEventListener('click', showAll)
 btnFiltre[1].addEventListener('click', showGamesOnly)
-btnFiltre[2].addEventListener('click', showVisualOnly)
+btnFiltre[2].addEventListener('click', showAppsOnly)
 btnFiltre[3].addEventListener('click', showApiOnly)
-btnFiltre[4].addEventListener('click', showBasicOnly)
