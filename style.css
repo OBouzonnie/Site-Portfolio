@@ -30,7 +30,7 @@ nav{
     line-height: 50px;
     text-align: center;
     position:fixed;
-    z-index:1;
+    z-index:2;
 }
 
 nav li{
@@ -88,8 +88,8 @@ header{
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-width: 50px;
-height: 50px;
+width: 40px;
+height: 40px;
 border:1px solid #333;
 border-radius: 50%;
 background-color: transparent;
@@ -97,6 +97,7 @@ color:#fff;
 font-size: 32px;
 cursor: pointer;
 outline:none;
+backdrop-filter: blur(10px);
 }
 
 .slider figure{
@@ -128,17 +129,22 @@ h1{
     color: #f1f1f1;
     font-style: italic;
     margin-top: 16px;
+    width: 80%;
+    position: absolute;
+    top: 160px;
+    left:50%;
+    transform: translate(-50%);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
 }
 
 h1 span{
     display:inline-block;
-    position:relative;
-    top: 6px;
-    animation: roll ease-in-out 2.5s infinite alternate;
+    animation: roll ease-in-out 2.5s alternate;
 }
 
 h1 span:hover{
-    animation: roll ease-in-out 0.5s infinite alternate;
+    animation: roll ease-in-out 0.5s alternate;
 }
 
 @keyframes roll{
@@ -304,6 +310,9 @@ h2{
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
+    box-shadow: 0px 0px 10px 1px #000;
+    border-radius: 5px;
+    padding: 15px;
 }
 
 .gallerie div{
@@ -378,14 +387,14 @@ footer{
 /* Filtre */
 
 .btn-filtre{
-    margin: 20px 0;
+    margin: 0px 0 50px;
     width: 80%;
     height: 32px;
     display:flex;
     align-items: center;
     justify-content: center;
-    background-color: transparent;
-    color:#0a66c2;
+    background-color: #0A66C2;
+    color:#f1f1f1;
     font-weight: bold;
     border : 3px solid #0a66c2;
     border-radius: 999px;
@@ -394,11 +403,12 @@ footer{
 .btn-filtre:hover{
     background-color: rgba(10, 102, 194);
     color: #f1f1f1;
+    box-shadow: 0px 0px 10px 1px #0a66c2;
 }
 
 .btn-filtre div{
     font-size: 14px;
-    padding: 0 5px;
+    padding: 0 15px;
     cursor: pointer;
 }
 .btn-filtre div:not(:last-child){
@@ -413,12 +423,8 @@ footer{
 }
 
 .btn-filtre div:hover{
-    animation: button-hover ease-in-out 1s infinite alternate
-}
-
-@keyframes button-hover{
-    from{transform: scale(1)}
-    to{transform: scale(1.1)}
+    transition: transform ease-in-out 0.3s;
+    transform: scale(1.5);
 }
 
 
@@ -433,7 +439,7 @@ footer{
 
     .btn-filtre div{
         font-size: 16px;
-        padding: 0 5px;
+        padding: 0 25px;
     }
 }
 
@@ -460,10 +466,15 @@ footer{
         height: 400px;
     }
 
+    .slider button{
+        width: 50px;
+        height: 50px;
+    }
+
     h1{
         display:flex;
         justify-content: center;
-        font-size: 32px;
+        top: 350px;
     }
 
     h1 div:first-child{
@@ -476,7 +487,7 @@ footer{
 
     .btn-filtre{
         height: 50px;
-        max-width: 600px;
+        max-width: 500px;
     }
 
     .btn-filtre div{
@@ -540,11 +551,15 @@ footer{
     }
 
     h1{
-        font-size: 112px;
+        top:500px;
     }
 
     h1 div:first-child{
         margin-right: 112px;
+    }
+
+    .btn-filtre div{
+        padding: 0 32px;
     }
     
 }
@@ -553,6 +568,11 @@ footer{
 
     .slider{
         height: 800px;
+    }
+
+    h1{
+        font-size: 80px;
+        top: 700px;
     }
 
     .gallerie div{
@@ -577,7 +597,7 @@ footer{
 
     .btn-filtre div{
         font-size:50px;
-        padding: 0 20px;
+        padding: 0 50px;
     }
 
     .contact div{
